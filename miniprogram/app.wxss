@@ -1,0 +1,31 @@
+/**app.wxss**/
+
+
+@import './style/iconfont.wxss';
+@import './style/iApp.wxss';
+@import './style/sprite.wxss';
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+.i-cell{
+    font-size: 24rpx
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+div{
+    display: block
+}
+.min-fz{
+    font-size: 24rpx;
+}
+.gray{
+    color: #ccc
+}

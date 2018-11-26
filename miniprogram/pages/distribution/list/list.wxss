@@ -1,0 +1,125 @@
+/* miniprogram/pages/distribution/list/list.wxss */
+page{
+    font-size: 24rpx;
+}
+    .mb10{
+        margin-bottom: 10px;
+    }
+
+    .nav-wrap{
+        width: 100%;
+        display: flex;
+        position: fixed;
+        top: 0;
+        background: white;
+        z-index: 9;
+        
+        /*width: 100%;*/
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+    }
+    .top44{
+        width: 100%;
+        position: fixed;
+        top: 44px;
+        background: white;
+        z-index: 9
+        
+    }
+    .nav-item{
+        flex: 1;
+        text-align: center;
+        line-height: 44px;
+        background: #fff;
+        font-size: 16px;
+    }
+    .nav-item.active{
+        color: #f96a16;
+        background-image:linear-gradient(to top,#f96a16 3px,transparent);
+        background-repeat: no-repeat;
+        background-size: 80% 3px;
+        background-position: center bottom;
+    }
+.main-wrapper{
+    overflow-x: scroll;
+    padding-left: 15px
+}
+.flex-container{
+    display: flex;
+}
+.flex-container text,.flex-container > div{
+
+    min-width: 150rpx;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc
+    
+}
+.mode-item{
+    border:1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-size: 28rpx
+}
+
+.mode-item.active{
+    border:1px solid #ff6666;
+    color: #ff6666
+}
+
+.card-container{
+    width: 690rpx;
+    min-height: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    background: #fff;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0,0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.card-img-wrapper{
+    z-index: 2;
+    position: relative;
+    width: 35%;
+}
+.card-img-wrapper image{
+    width: 160rpx;
+    height: 160rpx
+}
+.card-cell{
+
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+
+
+.card-cell .title,.card-cell .desc{
+    background: skyblue
+}
+.card-cell .title{
+    display: inline-block;
+    text-align: justify;
+    text-align-last: justify;
+    width: 100rpx;
+    line-height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding:0 10px;
+}
+.card-cell .desc{
+    text-align: left;
+    width: 200rpx;
+    line-height: 20px;
+    padding:0 10px;
+    border-radius: 5px
+}

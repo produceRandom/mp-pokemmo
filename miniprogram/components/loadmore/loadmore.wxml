@@ -1,0 +1,8 @@
+<!--component/loadmore/loadmore.wxml-->
+<div class="min-fz gray" wx:if="{{pager.page_total <= pager.page_current && pager.page_total > 1}}"  style="text-align:center; padding:10px">已加载全部数据</div>
+<div class="min-fz gray"   style="text-align:center; padding:10px" wx:if="{{pager.page_total == 0}}">
+
+    暂无数据
+</div>
+
+<div class="min-fz gray" wx:if="{{pager.page_total > pager.page_current}}"  style="text-align:center; padding:10px">上拉加载全部数据</div>

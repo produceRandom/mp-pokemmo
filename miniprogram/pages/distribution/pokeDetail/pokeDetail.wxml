@@ -1,0 +1,88 @@
+<!--miniprogram/pages/distribution/pokeDetail/pokeDetail.wxml-->
+
+
+<wxs module="m1">
+
+    function getCode(number){
+        if(number >= 100){
+            return number 
+        }
+        if(number < 10){
+            return  '00' + number
+        }
+        if(number >=10 && number < 100){
+            return '0' + number
+        }
+        return number
+    }
+
+    module.exports.getCode = getCode
+</wxs>
+
+<div class="card-container">
+
+
+    <div class="card-img-wrapper">
+        
+        <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(poke_id)}}.png'></image>
+    </div>
+    <div>
+
+        <div class="card-cell">
+    
+            <div class="title">
+                精灵
+            </div>
+            <div class="desc">{{pokeDetail.pokemon_name}}</div>
+        </div>
+
+        <div class="card-cell">
+    
+            <div class="title">
+                蛋组
+            </div>
+            <div class="desc">{{pokeDetail.egg_group}}</div>
+        </div>
+        <div class="card-cell">
+    
+            <div class="title">
+                努力值
+            </div>
+            <div class="desc">{{pokeDetail.effort_value}}</div>
+        </div>
+
+    </div>
+
+
+</div>
+<div style="padding-left:30rpx;">
+
+    精灵分布:
+
+</div>
+
+
+<view class='main-wrapper' wx:if="{{pokeDetail.distrbution.length>0}}">
+    <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
+        <text>地区</text>
+        <text>地址</text>
+        <text>位置</text>
+        <text>概率</text>
+        <text>几率携带</text>
+    </view>
+
+    <view
+        wx:for="{{pokeDetail.distrbution}}"
+        wx:for-item="item"
+        wx:key="id"
+        class='flex-container'
+    >
+        <text>{{item.area_name}}</text>
+
+        <text>{{item.address}}</text>
+
+        <text>{{item.position}}</text>
+        <text>{{item.chance?item.chance:''}}</text>
+        <text>{{item.carry?item.carry:''}}</text>
+    </view>
+</view>

@@ -1,0 +1,111 @@
+<!--miniprogram/pages/distribution/list/list.wxml-->
+<wxs module="m1">
+
+
+    function getColor(position){
+        var color=''
+        if(position == '草丛'){
+            color="#66ff33"
+        }
+        if(position == '水面'){
+            color="skyblue"
+        }
+        if(position.indexOf('定点') >= 0){
+            color="yellow"
+        }
+        if(position.indexOf('钓竿') >= 0){
+            color="#cc66ff"
+        }
+        if(position == '山洞'){
+            color="#ff9900"
+        }
+        return color
+    }
+    function getCode(number){
+        if(number >= 100){
+            return number 
+        }
+        if(number < 10){
+            return  '00' + number
+        }
+        if(number >=10 && number < 100){
+            return '0' + number
+        }
+        return number
+    }
+    module.exports.getColor = getColor
+    module.exports.getCode = getCode
+</wxs>
+
+<header>
+    <div class="mr20">
+        <picker  bindchange="bindPickerChange" value="{{groupIndex}}" range="{{groups}}" range-key='desc'>
+            <view class="picker">
+            筛选
+           
+            </view>
+        </picker>
+    </div>
+
+    <div class="header-search">
+        <i class="icon iconfont icon-search"></i>
+        <input type="text" placeholder="请输入精灵名字" placeholder-style='color:#ccc' bindinput='setKeyword' value='{{keyword}}'></input>
+
+    </div>
+    <div class="search-btn" bindtap="search">
+        搜索
+    </div>
+</header>
+
+<view style='height:64px'></view>
+
+<view style='background:rgb(248,248,248)'>
+
+    <navigator
+        wx:for="{{pokemon_list}}"
+        wx:for-item="item"
+        wx:key=""
+        class='card-container'
+        hover-class='none'
+        url='/pages/pokemon/detail/detail?id={{item.id}}'
+    >
+        <div class="card-img-wrapper">
+
+            <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(item.id)}}.png'></image>
+        </div>
+        <div>
+            <div class="card-cell">
+        
+                <div class="title"  style="background:#ff66cc">
+                    编号                    
+                </div>
+                <div class="desc"  style="background:#ff66cc">#{{m1.getCode(item.id)}}</div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    精灵
+                </div>
+                <div class="desc">{{item.pokemon_name}}</div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    英文名
+                </div>
+                <div class="desc">{{item.pokemon_name_cn}}</div>
+            </div>
+
+        </div>
+
+ 
+
+    </navigator>
+    
+
+</view>
+
+
+
+
+<load-more pager="{{pager}}"></load-more>

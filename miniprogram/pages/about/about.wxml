@@ -1,0 +1,41 @@
+<!--miniprogram/pages/about/about.wxml-->
+
+
+
+<div class="i-cells " style="margin-top: 0">
+    <navigator class="i-cell i-cell-access"  open-type='switchTab' url='/pages/pokemon/list/list'>
+
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-350"></i><p>全国图鉴</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </navigator>
+    <div class="i-cell i-cell-access"  bindtap="waitOpen">
+
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-150"></i><p>技能</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </div>
+
+    <div class="i-cell i-cell-access"  bindtap="waitOpen">
+
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-384"></i><p>道具</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </div>
+
+</div>
+
+
+
+<div class="i-cells">
+    <button class="i-cell i-cell-access btn-clear" hover-class='none'  bindtap="showContact" open-type='contact' >
+
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-282"></i><p>联系方式</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </button>
+</div>

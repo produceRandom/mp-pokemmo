@@ -1,0 +1,47 @@
+/* miniprogram/pages/pokemon/list/list.wxss */
+@import '/pages/distribution/list/list.wxss';
+    header{
+        display: flex;
+        background: #fff;
+        padding: 0 15px;
+        height: 44px;
+        line-height: 32px;
+        position: fixed;
+        top: 0;
+        box-sizing: border-box;
+        width: 100%;
+        z-index: 5
+         
+    }
+    
+    header >div{
+        align-self: center;
+        white-space: nowrap
+    }
+    .header-search{
+        flex: auto;
+        position: relative;
+        font-size: 28rpx;
+    }
+    .header-search i{
+        position: absolute;
+        left: 10px;
+        color:#ccc
+    }
+    .header-search input{
+        background: rgb(248,248,248);
+        width: 100%;
+        height: 32px;
+        border: none;
+        box-sizing: border-box;
+        padding-left: 30px;
+        border-radius: 10px;
+    
+    }
+    .search-btn{
+        margin-left: 20px;
+        font-size: 28rpx;
+    }
+    .mr20{
+        margin-right: 20px
+    }

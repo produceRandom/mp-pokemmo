@@ -1,0 +1,149 @@
+<!--miniprogram/pages/distribution/list/list.wxml-->
+<wxs module="m1">
+
+
+    function getColor(position){
+        var color=''
+        if(position == '草丛'){
+            color="#66ff33"
+        }
+        if(position == '水面'){
+            color="skyblue"
+        }
+        if(position.indexOf('定点') >= 0){
+            color="yellow"
+        }
+        if(position.indexOf('钓竿') >= 0){
+            color="#cc66ff"
+        }
+        if(position == '山洞'){
+            color="#ff9900"
+        }
+        return color
+    }
+    function getCode(number){
+        if(number >= 100){
+            return number 
+        }
+        if(number < 10){
+            return  '00' + number
+        }
+        if(number >=10 && number < 100){
+            return '0' + number
+        }
+        return number
+    }
+    module.exports.getColor = getColor
+    module.exports.getCode = getCode
+</wxs>
+
+<div class="nav-wrap mb10">
+    <div class="nav-item {{area_id == 1?'active':''}}" data-area_id="1" bindtap="changeTab">关都</div>
+    <div class="nav-item {{area_id == 2?'active':''}}" data-area_id="2" bindtap="changeTab">丰缘</div>
+    <div class="nav-item {{area_id == 3?'active':''}}" data-area_id="3" bindtap="changeTab">合众</div>
+</div>
+<div class="i-cell top44">
+    <div>
+        <span class="mode-item {{mode == 'card'?'active':''}}" data-mode="card" bindtap="changeMode">卡片模式</span>
+    
+        <span class="mode-item {{mode == 'simple'?'active':''}}" data-mode="simple" bindtap="changeMode">表格模式</span>
+
+    </div>
+</div>
+
+<view style='height:104px'></view>
+
+<view wx:if="{{mode == 'card'}}" style='background:rgb(248,248,248)'>
+
+    <navigator
+        wx:for="{{distribution_list}}"
+        wx:for-item="item"
+        wx:key="id"
+        class='card-container'
+        hover-class='none'
+        url='/pages/pokemon/detail/detail?id={{item.pokemon_id}}'
+    >
+        <div class="card-img-wrapper">
+
+            <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(item.pokemon_id)}}.png'></image>
+        </div>
+        <div>
+            <div class="card-cell">
+        
+                <div class="title"  style="background:#ff66cc">
+                    地址                    
+                </div>
+                <div class="desc"  style="background:#ff66cc">{{item.address}}</div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    位置
+                </div>
+                <div class="desc">{{item.position}}</div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    概率
+                </div>
+                <div class="desc">{{item.chance?item.chance:''}}</div>
+            </div>
+            <div class="card-cell" style="margin-bottom:0">
+        
+                <div class="title">
+                    几率携带
+                </div>
+                <div class="desc">{{item.carry?item.carry:''}}</div>
+            </div>
+  
+        </div>
+
+ 
+
+    </navigator>
+    
+
+</view>
+
+
+
+<view class='main-wrapper' wx:if="{{mode=='simple'}}">
+    <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
+        <text>地址</text>
+        <div style="min-width:90rpx;">
+            <div style="width:40px;text-align:center">图像</div>
+        </div>
+        <text>精灵</text>
+        
+        <text>位置</text>
+        <text>概率</text>
+        <text>努力值</text>
+        <text>蛋组</text>
+        <text>几率携带</text>
+    </view>
+
+    <view
+        wx:for="{{distribution_list}}"
+        wx:for-item="item"
+        wx:key="id"
+        class='flex-container'
+    >
+
+        <text>{{item.address}}</text>
+
+        <div style="min-width:90rpx;"><i class="sprite-icon sprite-icon-{{m1.getCode(item.pokemon_id)}}"></i></div>
+        <div>{{item.pokemon_name}}</div>
+        <text 
+            style='background:{{m1.getColor(item.position)}}'
+        >{{item.position}}</text>
+        <text>{{item.chance?item.chance:''}}</text>
+        <text>{{item.effort_value}}</text>
+        <text>{{item.egg_group}}</text>
+        <text style='white-space:nowrap'>{{item.carry?item.carry:'无'}}</text>
+    </view>
+</view>
+
+
+
+<load-more pager="{{pager}}"></load-more>

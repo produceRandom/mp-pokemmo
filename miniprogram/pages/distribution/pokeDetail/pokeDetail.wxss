@@ -1,0 +1,76 @@
+/* miniprogram/pages/distribution/pokeDetail/pokeDetail.wxss */
+page{
+    font-size: 24rpx;
+}
+.card-container{
+    width: 690rpx;
+    height: 300rpx;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0,0.3);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+.card-img-wrapper{
+    z-index: 2;
+    position: relative;
+    width: 35%;
+}
+.card-img-wrapper image{
+    width: 160rpx;
+    height: 160rpx
+}
+.card-cell{
+
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+
+.card-cell .title,.card-cell .desc{
+    background: skyblue
+}
+.card-cell .title{
+    display: inline-block;
+    text-align: justify;
+    text-align-last: justify;
+    width: 100rpx;
+    line-height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding:0 10px;
+}
+.card-cell .desc{
+    text-align: left;
+    width: 200rpx;
+    line-height: 20px;
+    padding:0 10px;
+    border-radius: 5px
+}
+
+.flex-container{
+    display: flex;
+    
+}
+
+.flex-container text,.flex-container > div{
+
+    flex: 1;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc
+    
+}
+.main-wrapper{
+
+    padding-left: 15px
+}

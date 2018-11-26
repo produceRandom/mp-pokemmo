@@ -1,0 +1,13 @@
+/* miniprogram/pages/about/about.wxss */
+page{
+    background: rgb(248,248 ,248)
+}
+.btn-clear{
+    text-align: left;
+    border-radius: 0;
+    line-height: 1em;
+    background: #fff
+}
+button::after{
+    border: 0
+}
