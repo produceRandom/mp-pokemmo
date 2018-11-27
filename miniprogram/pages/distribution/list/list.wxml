@@ -64,7 +64,7 @@
         url='/pages/pokemon/detail/detail?id={{item.pokemon_id}}'
     >
         <div class="card-img-wrapper">
-
+            <div style="width:160rpx;text-align:center;margin-bottom:10px;color:#333;font-weight:700">{{item.pokemon_name}}</div>
             <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(item.pokemon_id)}}.png'></image>
         </div>
         <div>

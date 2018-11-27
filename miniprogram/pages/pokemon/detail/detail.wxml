@@ -85,7 +85,7 @@
                 攻击
             </div>
              <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.pa_stat*100/160}}%">{{pokeDetail.stat.pa_stat}}</div>
+                <div class="stat-line-value" style="width:{{pokeDetail.stat.pa_stat*100/255}}%">{{pokeDetail.stat.pa_stat}}</div>
             </div>
         </div>
         <div class="card-cell">
@@ -94,7 +94,7 @@
                 防御
             </div>
             <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.pd_stat*100/230}}%">{{pokeDetail.stat.pd_stat}}</div>
+                <div class="stat-line-value" style="width:{{pokeDetail.stat.pd_stat*100/255}}%">{{pokeDetail.stat.pd_stat}}</div>
             </div>
         </div>
         <div class="card-cell">
@@ -103,7 +103,7 @@
                 特攻
             </div>
             <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.sa_stat*100/154}}%">{{pokeDetail.stat.sa_stat}}</div>
+                <div class="stat-line-value" style="width:{{pokeDetail.stat.sa_stat*100/255}}%">{{pokeDetail.stat.sa_stat}}</div>
             </div>
         </div>
         <div class="card-cell">
@@ -112,16 +112,15 @@
                 特防
             </div>
             <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.sd_stat*100/230}}%">{{pokeDetail.stat.sd_stat}}</div>
+                <div class="stat-line-value" style="width:{{pokeDetail.stat.sd_stat*100/255}}%">{{pokeDetail.stat.sd_stat}}</div>
             </div>
         </div>
         <div class="card-cell">
-    
             <div class="title">
                 速度
             </div>
             <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.speed_stat*100/160}}%">{{pokeDetail.stat.speed_stat}}</div>
+                <div class="stat-line-value" style="width:{{pokeDetail.stat.speed_stat*100/255}}%">{{pokeDetail.stat.speed_stat}}</div>
             </div>
         </div>
     </div>
