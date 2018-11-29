@@ -3,22 +3,53 @@
 
 
     function getColor(position){
-        var color=''
+        var color='#8b8a8a'
         if(position == '草丛'){
-            color="#66ff33"
+            color="#add597"
         }
         if(position == '水面'){
-            color="skyblue"
+            color="#a1c5ff"
         }
-        if(position.indexOf('定点') >= 0){
-            color="yellow"
+        if(position == '深色草丛'){
+            color="#32b16c"
         }
-        if(position.indexOf('钓竿') >= 0){
-            color="#cc66ff"
+        if(position == '初始定点'){
+            color="#facd89"
+        }
+        if(position.indexOf('钓竿') > 0){
+            color="#f291c2"
+        }
+        if(position == '厉害钓竿'){
+            color="#9082bd"
+        }
+        if(position == '中高钓竿'){
+            color="#c490c0"
+        }
+        if(position == '低中钓竿'){
+            color="#f291c2"
+        }
+
+        if(position == '随机'){
+            color="#ff4f4f"
         }
         if(position == '山洞'){
-            color="#ff9900"
+            color="#716b5a"
         }
+        if(position == '定点'){
+            color="#f2914a"
+        }
+        if(position == '飞行影子'){
+            color="#b5b5b5"
+        }
+        if(position == '卷尘地面'){
+            color="#b28750"
+        }
+        if(position == '摇晃草丛'){
+            color="#015f15"
+        }
+        if(position == '水纹钓鱼' || position == '水纹水面'){
+            color="#448aca"
+        }        
         return color
     }
     function getCode(number){
@@ -135,7 +166,7 @@
         <div style="min-width:90rpx;"><i class="sprite-icon sprite-icon-{{m1.getCode(item.pokemon_id)}}"></i></div>
         <div>{{item.pokemon_name}}</div>
         <text 
-            style='background:{{m1.getColor(item.position)}}'
+            style='background:{{m1.getColor(item.position)}};color:#fff'
         >{{item.position}}</text>
         <text>{{item.chance?item.chance:''}}</text>
         <text>{{item.effort_value}}</text>
