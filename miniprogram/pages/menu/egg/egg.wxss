@@ -1,0 +1,20 @@
+/* pages/menu/egg/egg.wxss */
+page{
+    padding: 15px;
+    box-sizing: border-box
+}
+.red{
+    color: red
+}
+.title{
+    font-size: 32rpx;
+    margin-bottom: 5px;
+}
+.text{
+    display: block;
+    font-size: 24rpx;
+    text-indent: 2em;
+    line-height: 1.5em;
+    letter-spacing: 0.2em;
+    color: #333
+}

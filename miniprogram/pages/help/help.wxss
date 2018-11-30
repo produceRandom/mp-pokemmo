@@ -1,0 +1,9 @@
+/* miniprogram/pages/help/help.wxss */
+page{
+    box-sizing: border-box;
+    padding: 15px;
+
+}
+rich-text{
+    font-size: 12px;
+}
