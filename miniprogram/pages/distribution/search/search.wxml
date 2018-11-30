@@ -40,7 +40,7 @@
 </wxs>
 <div style="position:fixed;top:0;padding-left:15px;line-height:30px;color:#999;background:#fff;width:100%">
 
-    例：选择搜索努力值后，可输入速度搜索加速度努力的精灵及其分布
+    例：左侧选择搜索蛋组，输入龙组搜索龙组的精灵及其分布
 </div>
 <header style="top:30px;">
     <div class="mr20">

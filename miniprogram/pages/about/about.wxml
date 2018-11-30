@@ -10,6 +10,7 @@
         </div>
         <div class="i-cell-col-remarks"></div>
     </navigator>
+    
     <div class="i-cell i-cell-access"  bindtap="waitOpen">
 
         <div class="i-cell-col-title">
@@ -25,7 +26,13 @@
         </div>
         <div class="i-cell-col-remarks"></div>
     </div>
+    <navigator class="i-cell i-cell-access"  url='/pages/menu/egg/egg'>
 
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-350"></i><p>孵蛋规则</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </navigator>
 </div>
 
 
@@ -34,8 +41,15 @@
     <button class="i-cell i-cell-access btn-clear" hover-class='none'  bindtap="showContact" open-type='contact' >
 
         <div class="i-cell-col-title">
-            <i class="sprite-icon sprite-icon-282"></i><p>联系方式</p>
+            <i class="sprite-icon sprite-icon-282"></i><p>联系我</p>
         </div>
         <div class="i-cell-col-remarks"></div>
     </button>
+    <navigator class="i-cell i-cell-access btn-clear" hover-class='none' url='/pages/help/help'>
+
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-151"></i><p>关于/通知</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </navigator>
 </div>
