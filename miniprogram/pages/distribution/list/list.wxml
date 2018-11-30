@@ -4,6 +4,7 @@
 
     function getColor(position){
         var color='#8b8a8a'
+        
         if(position.indexOf('草丛')>0){
             color="#add597"
         }
