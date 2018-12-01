@@ -57,10 +57,10 @@
     </div>
 </header>
 
-<view style='height:64px'></view>
+<view style='height:64px;background:rgb(248,248,248)'></view>
 
 <view style='background:rgb(248,248,248)'>
-
+    <view style='text-align:center;color:#ccc;margin-bottom:10px' wx:if="{{tip!=''}}">{{tip}}</view>
     <navigator
         wx:for="{{pokemon_list}}"
         wx:for-item="item"
@@ -108,4 +108,4 @@
 
 
 
-<load-more pager="{{pager}}"></load-more>
+<load-more pager="{{pager}}" wx:if="{{pokemon_list.length>1}}"></load-more>

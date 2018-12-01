@@ -9,14 +9,24 @@ Page({
     data: {
         pokemon_list: [],
         pager: {},
-        keyword:''
+        keyword:'',
+        tip:""
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getList()
+        var listData = wx.getStorageSync('pokemon_list')
+        if (listData != ''){
+            this.setData({
+                pokemon_list: listData.pokemon_list,
+                pager: listData.pager
+            })
+        }else{
+            this.getList()
+
+        }
     },
 
     /**
@@ -51,7 +61,16 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        var that = this
+        that.setData({
+            tip: "刷新中"
+        })
+        this.reloadList().then(res=>{
+            wx.stopPullDownRefresh()
+            that.setData({
+                tip: ""
+            })
+        })
     },
 
     /**
@@ -89,7 +108,7 @@ Page({
         if(this.data.keyword!=''){
             data.keyword = this.data.keyword
         }
-        wx.cloud.callFunction({
+        return wx.cloud.callFunction({
             name: 'get_pokemon_list',
             data: data
         }).then(res => {
@@ -99,7 +118,14 @@ Page({
                 pager: res.result.data.pager
             })
 
+
+            
             wx.hideLoading()
+            wx.setStorageSync('pokemon_list', {
+                pokemon_list: that.data.pokemon_list,
+                pager: that.data.pager
+
+            })
 
         }).catch(res => {
             console.log(res)
@@ -119,9 +145,10 @@ Page({
     reloadList() {
         this.setData({
             'pager.page_current': '1',
-            'pokemon_list': []
+            'pokemon_list': [],
+            'keyword': ''
         })
-        this.getList()
+        return this.getList()
     },
     setKeyword(e) {
         var keyword = e.detail.value
@@ -130,6 +157,15 @@ Page({
         })
     },
     search(){
-        this.reloadList()
+        var that = this
+        this.setData({
+            'pager.page_current': '1',
+            'pokemon_list': [],
+        })
+        return this.getList().then(res=>{
+            that.setData({
+                tip: "下拉可刷新页面"
+            })
+        })
     }
 })

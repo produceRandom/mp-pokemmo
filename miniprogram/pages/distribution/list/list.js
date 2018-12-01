@@ -17,7 +17,17 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getList()
+        var listData = wx.getStorageSync('distribution_list_1')
+        if (listData != '') {
+            this.setData({
+                distribution_list: listData.distribution_list,
+                pager: listData.pager
+            })
+        } else {
+            this.getList()
+
+        }
+
     },
 
     /**
@@ -71,15 +81,7 @@ Page({
     getList(){
 
         var that = this
-        
-        // 查询当前用户所有的 counters
-        // db.collection('distribution').get().then(res => {
-        //     // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
-        //     console.log(res.data)
-        //     that.setData({
-        //         distribution_list:res.data
-        //     })
-        // })
+
         wx.showLoading({
             title: '获取中',
         })
@@ -95,6 +97,14 @@ Page({
                 distribution_list: [...that.data.distribution_list, ...res.result.data.items],
                 pager: res.result.data.pager
             })
+            if (that.data.area_id == '1'){
+                wx.setStorageSync('distribution_list_1', {
+                    distribution_list: that.data.distribution_list,
+                    pager: that.data.pager
+
+                })
+            }
+
 
             wx.hideLoading()
             
