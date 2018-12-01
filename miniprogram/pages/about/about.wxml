@@ -29,7 +29,7 @@
     <navigator class="i-cell i-cell-access"  url='/pages/menu/egg/egg'>
 
         <div class="i-cell-col-title">
-            <i class="sprite-icon sprite-icon-350"></i><p>孵蛋规则</p>
+            <i class="sprite-icon sprite-icon-egg"></i><p>孵蛋规则</p>
         </div>
         <div class="i-cell-col-remarks"></div>
     </navigator>

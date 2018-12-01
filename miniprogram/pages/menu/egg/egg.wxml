@@ -2,8 +2,58 @@
 <div class="title">孵蛋规则</div>
 <div>
 
+    <div  class='text mb10'>
+        关于孵蛋的组合：只有同蛋组之间才可以进行孵蛋，无性别组只能与同种类的宝可梦或百变怪孵蛋，百变怪组可以与未发现蛋组以外的任一蛋组孵蛋，但孵出来的宝可梦永远是和百变怪一起孵蛋的另一只宝可梦种类。         
+    </div>
+    <div  class='text'>
+        关于孵出的种类：同蛋组的宝可梦一公一母孵蛋，孵出来的的蛋的种类永远和母方一致，比如同属于龙组的鲤鱼王公与同组的迷你龙母进行孵蛋那么拿到的蛋必定是迷你龙，拿到的蛋的个体值会在亲代个体值之间随机（pokemmo中可以让亲代携带项圈道具继承某一方的某个个体），性格会随机生成（可携带不变之石让子代继承性格）。
+    </div>
 
-    <div  class='text'>关于孵蛋的组合：只有同蛋组之间才可以进行孵蛋，无性别组只能与同种类的宝可梦或百变怪孵蛋，百变怪组可以与未发现蛋组以外的任一蛋组孵蛋，但孵出来的宝可梦永远是和百变怪一起孵蛋的另一只宝可梦种类。<label class='red'>(以上部分和常规单机版本孵蛋规则相同)</label></div>
-    <div  class='text'>关于孵出的种类：同蛋组的宝可梦一公一母孵蛋，孵出来的的蛋的种类永远和母方一致，比如同属于龙组的鲤鱼王公与同组的迷你龙母进行孵蛋那么拿到的蛋必定是迷你龙，拿到的蛋的个体值会在亲代个体值之间随机（可以让亲代携带项圈道具继承某一方的某个个体），性格会随机生成（要锁性格就要携带不变之石）。<label class='red'>(以上部分是pokemmo的孵蛋规则)</label></div>
 
+    <div class='red text bold'>接下来的部分是pokemmo与常规单机版本不同的规则部分</div>
+
+    <div  class='text'>
+        <label class='red'>孵蛋后父方和母方会消失，其携带物品也不会返还给玩家。</label>首先介绍可能会用到的工具： 
+    </div>
+    <div  class='text'>
+        1.项圈：锁住某一个个体值，保证子代该个体值和项圈所锁定数值一样，孵蛋后随着父母方消失。（每个孵蛋屋都会有npc卖六种个体的项圈）
+        <image src='/images/egg/image001.jpg' mode='widthFix' style='width:166px'></image>
+    </div>
+
+    <div  class='text'>
+        2.不变之石：锁住父母一方性格，保证子代该性格和不变之石锁定性格一样，孵蛋后随着父母方消失。{可以交易行买，也可以去搜索页搜索携带不变之石的精灵}
+    </div>
+    <div  class='text'>
+        除了道具之外。还可以花钱指定子代性别，拿蛋时可指定性别，5000元指定，公母比例7:1要21000元
+    </div>
+        
+    <div class='red text bold'>不考虑性格做5v的例子</div>
+    <div class='text'>首先，一只速度v和特防v携带对应项圈合成一只速度特防2v,(忽略我的败家，发现这只特防v还是速度u)</div>
+
+
+    <image src='/images/egg/2v.jpg' mode='widthFix' style='width:100%'></image>
+
+    <div class='text'>同理做出一只攻击速度2v，与之前速度特防2v孵蛋，做出一只攻击速度特防3v</div>
+
+    <image src='/images/egg/3v.jpg' mode='widthFix' style='width:100%'></image>
+
+
+
+    <div class='text'>同理做出一只攻击速度防御3v，与之前攻击速度特防3v孵蛋，做出一只攻击速度特防防御4v</div>
+
+    <image src='/images/egg/4v.jpg' mode='widthFix' style='width:100%'></image>
+
+
+
+    <div class='text'>同理做出一只hp攻击速度特防4v(迷你龙不够同蛋组来凑)，与之前攻击速度特防防御4v孵蛋，做出一只5v</div>
+
+
+    <image src='/images/egg/5v.jpg' mode='widthFix' style='width:100%'></image>
+
+
+    <div class='text'>5v登场！！！</div>
+    <image src='/images/egg/minilong.jpg' mode='widthFix' style='width:100%'></image>
+
+
+    <div class='text'>由于素材问题(舍不得钱)，5v对性格等我做了补图，简要说明就是用对性格带不变石和1v带项圈合成1v对性格，然后1v对性格带不变石和2v带项圈合成2v对性格以此类推</div>
 </div>

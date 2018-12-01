@@ -1,7 +1,9 @@
 /* pages/menu/egg/egg.wxss */
 page{
     padding: 15px;
-    box-sizing: border-box
+    box-sizing: border-box;
+    color: #333;
+
 }
 .red{
     color: red
@@ -16,5 +18,10 @@ page{
     text-indent: 2em;
     line-height: 1.5em;
     letter-spacing: 0.2em;
-    color: #333
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.bold{
+    font-weight: bolder
 }
