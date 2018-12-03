@@ -20,12 +20,100 @@
     justify-content: space-between;
     align-items: center
 }
+.flex-start{
+    display: flex;
+
+    align-items: center
+}
 div{
     display: block
 }
 .min-fz{
     font-size: 24rpx;
 }
+.mid-fz{
+    font-size: 28rpx;
+}
+.max-fz{
+    font-size: 32rpx;
+}
+.huge-fz{
+    font-size: 36rpx;
+}
 .gray{
     color: #ccc
+}
+.bg-deep-blue{
+    background:#83aee1 !important;
+    color:#fff !important;
+}
+.mb10{
+    margin-bottom: 10px
+}
+
+
+.type-box{
+    width: 160rpx;
+    height: 50rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #000;
+    margin-right: 10px;
+    color: #fff
+}
+.type-box-1{
+    background: #a8a191
+}
+.type-box-2{
+    background: #a34d3c
+}
+.type-box-3{
+    background: #97a8f0
+}
+.type-box-4{
+    background: #b059a0
+}
+.type-box-5{
+    background: #d0b059
+}
+.type-box-6{
+    background: #b8a058
+}
+.type-box-7{
+    background: #a8b821
+}
+.type-box-8{
+    background: #5f60b0
+}
+.type-box-9{
+    background: #a8a8c0
+}
+.type-box-10{
+    background: #f05030
+}
+.type-box-11{
+    background: #0c64e9
+}
+.type-box-12{
+    background: #78c84f
+}
+.type-box-13{
+    background: #f8bf30
+}
+.type-box-14{
+    background: #f870a0
+}
+.type-box-15{
+    background: #58c8e0
+}
+.type-box-16{
+    background: #7960e0
+}
+.type-box-17{
+    background: #6f5848
+}
+.type-box-18{
+    background: #f9a3c8
 }

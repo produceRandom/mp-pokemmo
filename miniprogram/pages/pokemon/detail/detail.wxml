@@ -19,147 +19,161 @@
     module.exports.getCode = getCode
 </wxs>
 
-<div class="card-container">
+
+<div class='poke_card'>
+    <div class="flex-start">
+
+        <div class="img-wrapper">
+            <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(poke_id)}}.png'></image>
+            
+        </div>
+        <div class="mid-fz" style="flex:1">
+            <div class="flex-between mb10">
+                <div class="huge-fz">{{pokeDetail.pokemon_name}}</div>
+                <div class="max-fz">#{{m1.getCode(pokeDetail.id)}}</div>
+            </div>
+            <div class="mb10">{{pokeDetail.pokemon_name_cn}}</div>
+
+            <div class="mb10 flex-start">
+            
+                <div 
+                    wx:for="{{pokeDetail.type}}"
+                    wx:for-item="item"
+                    wx:key=""
+                    class="type-box type-box-{{item.typeId}}"
+                >
+                    {{item.desc}}
+                </div>
+            </div>
+            <div>
+                <span style="margin-right:20px">身高 {{pokeDetail.height}}m</span>
+                <span>体重 {{pokeDetail.weight}}kg</span>
+                
+            </div>
+        </div>
+    </div>
 
 
-    <div class="card-img-wrapper">
+    <div class="card-container">
+        <div class="card-title">
         
-        <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(poke_id)}}.png'></image>
-    </div>
-    <div>
-        <div class="card-cell">
-    
-            <div class="title"  style="background:#ff66cc">
-                编号                    
-            </div>
-            <div class="desc"  style="background:#ff66cc">#{{m1.getCode(pokeDetail.id)}}</div>
+            <div class="mb10">种</div>
+            <div class="mb10">族</div>
+            <div>值</div>
+            
         </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                精灵
-            </div>
-            <div class="desc">{{pokeDetail.pokemon_name}}</div>
-        </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                英文名
-            </div>
-            <div class="desc">{{pokeDetail.pokemon_name_cn}}</div>
-        </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                身高
-            </div>
-            <div class="desc">{{pokeDetail.height}}m</div>
-        </div>
+        <div style='flex:1;box-sizing:border-box;padding:20rpx'>
             <div class="card-cell">
-    
-            <div class="title">
-                体重
+        
+                <div class="title">
+                    体力                    
+                </div>
+                <div class="stat-line hp-line">
+                    <div class="stat-line-value" style="width:{{pokeDetail.stat.hp_stat*100/255}}%">{{pokeDetail.stat.hp_stat}}</div>
+                </div>
             </div>
-            <div class="desc">{{pokeDetail.weight}}kg</div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    攻击
+                </div>
+                <div class="stat-line pa-line">
+                    <div class="stat-line-value" style="width:{{pokeDetail.stat.pa_stat*100/255}}%">{{pokeDetail.stat.pa_stat}}</div>
+                </div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    防御
+                </div>
+                <div class="stat-line pd-line">
+                    <div class="stat-line-value" style="width:{{pokeDetail.stat.pd_stat*100/255}}%">{{pokeDetail.stat.pd_stat}}</div>
+                </div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    特攻
+                </div>
+                <div class="stat-line sa-line">
+                    <div class="stat-line-value" style="width:{{pokeDetail.stat.sa_stat*100/255}}%">{{pokeDetail.stat.sa_stat}}</div>
+                </div>
+            </div>
+            <div class="card-cell">
+        
+                <div class="title">
+                    特防
+                </div>
+                <div class="stat-line sd-line">
+                    <div class="stat-line-value" style="width:{{pokeDetail.stat.sd_stat*100/255}}%">{{pokeDetail.stat.sd_stat}}</div>
+                </div>
+            </div>
+            <div class="card-cell">
+                <div class="title">
+                    速度
+                </div>
+                <div class="stat-line v-line">
+                    <div class="stat-line-value" style="width:{{pokeDetail.stat.speed_stat*100/255}}%">{{pokeDetail.stat.speed_stat}}</div>
+                </div>
+            </div>
         </div>
+
+
     </div>
 
 
-</div>
 
-<div class="card-container">
 
-    <div style='width:100%'>
-        <div class="card-cell">
-    
-            <div class="title">
-                体力                    
-            </div>
-            <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.hp_stat*100/255}}%">{{pokeDetail.stat.hp_stat}}</div>
-            </div>
+
+
+    <view class='main-wrapper'>
+
+        <div class="bg-deep-blue max-fz" style="text-align:center;line-height:60rpx">
+        
+            精灵分布
         </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                攻击
-            </div>
-             <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.pa_stat*100/255}}%">{{pokeDetail.stat.pa_stat}}</div>
-            </div>
+        
+        <div wx:if="{{!pokeDetail.distrbution}}" style="text-align:center;color:#333;line-height:30px;height:60px;">
+            暂无分布
         </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                防御
-            </div>
-            <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.pd_stat*100/255}}%">{{pokeDetail.stat.pd_stat}}</div>
-            </div>
+        <!-- <div  wx:if="{{pokeDetail.distrbution}}" style="max-height:{{windowH*750/windowW - 1200}}rpx;overflow:scroll"> -->
+        
+        <div  wx:if="{{pokeDetail.distrbution}}">
+            <view class='flex-container' style='line-height:24px;'>
+                <text>地区</text>
+                <text>地址</text>
+                <text>位置</text>
+                <text>概率</text>
+                <text>几率携带</text>
+            </view>
+
+            <view
+                wx:for="{{pokeDetail.distrbution}}"
+                wx:for-item="item"
+                wx:key="id"
+                class='flex-container'
+            >
+                <text>{{item.area_name}}</text>
+
+                <text>{{item.address}}</text>
+
+                <text>{{item.position}}</text>
+                <text>{{item.chance?item.chance:''}}</text>
+                <text>{{item.carry?item.carry:''}}</text>
+            </view>
         </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                特攻
-            </div>
-            <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.sa_stat*100/255}}%">{{pokeDetail.stat.sa_stat}}</div>
-            </div>
-        </div>
-        <div class="card-cell">
-    
-            <div class="title">
-                特防
-            </div>
-            <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.sd_stat*100/255}}%">{{pokeDetail.stat.sd_stat}}</div>
-            </div>
-        </div>
-        <div class="card-cell">
-            <div class="title">
-                速度
-            </div>
-            <div class="stat-line">
-                <div class="stat-line-value" style="width:{{pokeDetail.stat.speed_stat*100/255}}%">{{pokeDetail.stat.speed_stat}}</div>
-            </div>
-        </div>
-    </div>
 
-
-</div>
-<div style="padding-left:30rpx;">
-
-    精灵分布:
-    <span wx:if="{{!pokeDetail.distrbution}}">
-        暂无分布
-    </span>
-</div>
-
-
-
-
-
-<view class='main-wrapper' wx:if="{{pokeDetail.distrbution.length>0}}">
-    <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
-        <text>地区</text>
-        <text>地址</text>
-        <text>位置</text>
-        <text>概率</text>
-        <text>几率携带</text>
     </view>
 
-    <view
-        wx:for="{{pokeDetail.distrbution}}"
-        wx:for-item="item"
-        wx:key="id"
-        class='flex-container'
-    >
-        <text>{{item.area_name}}</text>
+</div>
 
-        <text>{{item.address}}</text>
 
-        <text>{{item.position}}</text>
-        <text>{{item.chance?item.chance:''}}</text>
-        <text>{{item.carry?item.carry:''}}</text>
-    </view>
-</view>
+<navigator class='prev-icon' wx:if="{{poke_id>1}}" url="/pages/pokemon/detail/detail?id={{poke_id - 1}}">
+    <i class="sprite-icon sprite-icon-{{m1.getCode(poke_id - 1)}}"></i>
+</navigator>
+<navigator class='next-icon' url="/pages/pokemon/detail/detail?id={{poke_id - -1}}">
+
+    <i class="sprite-icon sprite-icon-{{m1.getCode(poke_id - -1)}}"></i>
+
+
+</navigator>

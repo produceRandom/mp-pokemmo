@@ -5,7 +5,7 @@
     function getColor(position){
         var color='#8b8a8a'
         
-        if(position.indexOf('草丛')>0){
+        if(position.indexOf('草丛') >= 0){
             color="#add597"
         }
         if(position == '水面'){
@@ -17,7 +17,7 @@
         if(position == '初始定点'){
             color="#facd89"
         }
-        if(position.indexOf('钓竿') > 0){
+        if(position.indexOf('钓竿') >= 0 || position.indexOf('钓鱼') >= 0){
             color="#f291c2"
         }
         if(position == '厉害钓竿'){
@@ -102,10 +102,10 @@
         <div>
             <div class="card-cell">
         
-                <div class="title"  style="background:#ff66cc">
+                <div class="title bg-deep-blue">
                     地址                    
                 </div>
-                <div class="desc"  style="background:#ff66cc">{{item.address}}</div>
+                <div class="desc bg-deep-blue">{{item.address}}</div>
             </div>
             <div class="card-cell">
         
@@ -124,9 +124,9 @@
             <div class="card-cell" style="margin-bottom:0">
         
                 <div class="title">
-                    几率携带
+                    蛋组
                 </div>
-                <div class="desc">{{item.carry?item.carry:''}}</div>
+                <div class="desc">{{item.egg_group?item.egg_group:''}}</div>
             </div>
   
         </div>
@@ -155,11 +155,13 @@
         <text>几率携带</text>
     </view>
 
-    <view
+    <navigator
         wx:for="{{distribution_list}}"
         wx:for-item="item"
         wx:key="id"
         class='flex-container'
+        url='/pages/pokemon/detail/detail?id={{item.pokemon_id}}'
+        
     >
 
         <text>{{item.address}}</text>
@@ -173,9 +175,9 @@
         <text>{{item.effort_value}}</text>
         <text>{{item.egg_group}}</text>
         <text style='white-space:nowrap'>{{item.carry?item.carry:'无'}}</text>
-    </view>
+    </navigator>
 </view>
 
 
 
-<load-more pager="{{pager}}"></load-more>
+<load-more pager="{{pager}}" wx:if="{{distribution_list.length>0}}"></load-more>

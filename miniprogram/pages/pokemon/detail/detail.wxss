@@ -1,21 +1,61 @@
 /* miniprogram/pages/distribution/pokeDetail/pokeDetail.wxss */
 page{
     font-size: 24rpx;
+
+    box-sizing: border-box;
+    padding: 30rpx;
+
+}
+
+.poke_card{
+    background: #bad5ff;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0,0.3);
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.img-wrapper{
+    width: 260rpx;
+    height: 260rpx;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.img-wrapper image{
+    width: 200rpx;
+    height: 200rpx;
 }
 .card-container{
-    width: 690rpx;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
     border-radius: 10px;
     box-sizing: border-box;
-    padding: 20px 15px;
+
     background: #fff;
     box-shadow: 0 0 10px 0px rgba(0, 0, 0,0.3);
     display: flex;
-    align-items: center;
+    overflow: hidden;
+
     position: relative;
     z-index: 2;
+}
+.card-container .card-title{
+    width: 60rpx;
+    background: #83aee1;
+    text-align: center;
+    font-size: 32rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff
+
 }
 .card-img-wrapper{
     z-index: 2;
@@ -29,20 +69,23 @@ page{
 .card-cell{
 
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 20rpx;
 
 }
 
 
 .card-cell .title,.card-cell .desc{
-    background: skyblue
+    background: #efefef;
+    color:#185e99;
+
+    font-size: 32rpx;
 }
 .card-cell .title{
     display: inline-block;
     text-align: justify;
     text-align-last: justify;
     width: 100rpx;
-    line-height: 20px;
+    line-height: 70rpx;
     margin-right: 10px;
     border-radius: 5px;
     padding:0 10px;
@@ -50,7 +93,7 @@ page{
 .card-cell .desc{
     text-align: left;
     width: 200rpx;
-    line-height: 20px;
+    line-height: 70rpx;
     padding:0 10px;
     border-radius: 5px
 }
@@ -64,11 +107,11 @@ page{
     position: absolute;
     left: 0;
     top: 0;
-    height: 20px;
-    line-height: 20px;
+    height: 70rpx;
+    line-height: 70rpx;
     width: 0;
     border-radius: 10px;
-    background: #ff8533;
+    font-size: 28rpx;
     color: #fff;
     box-sizing: border-box;
     padding-left: 10px
@@ -87,7 +130,84 @@ page{
     border-bottom: 1px solid #ccc
     
 }
+.flex-container text:nth-of-type(1){
+    padding-left: 15px;
+    box-sizing: border-box
+}
 .main-wrapper{
+    background: #fff;
+    color: #185e99;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0,0.3);
+    overflow: hidden;
+}
+.card-cell .stat-line.hp-line{
+    background: #fbf1bf
+}
+.card-cell .stat-line.hp-line .stat-line-value{
+    background: #ffd018 
+}
+.card-cell .stat-line.pa-line{
+    background: #fbcbcb
+}
+.card-cell .stat-line.pa-line .stat-line-value{
+    background: #f73a41 
+}
+.card-cell .stat-line.pa-line{
+    background: #fbcbcb
+}
+.card-cell .stat-line.pd-line{
+    background: #d0def8 
+}
+.card-cell .stat-line.pd-line .stat-line-value{
+    background: #5085e5 
+}
+.card-cell .stat-line.sa-line{
+    background: #d2f8f9 
+}
+.card-cell .stat-line.sa-line .stat-line-value{
+    background: #58e7ed 
+}
+.card-cell .stat-line.sd-line{
+    background: #f2d5f3 
+}
+.card-cell .stat-line.sd-line .stat-line-value{
+    background: #d563d5 
+}
+.card-cell .stat-line.v-line{
+    background: #d0f0cb 
+}
+.card-cell .stat-line.v-line .stat-line-value{
+    background: #51c641 
+}
+.sprite-icon{
+    width: 70rpx;
+    height: 70rpx;
+    background-color: rgba(0, 0, 0，1);
+    
+}
+.prev-icon,.next-icon{
+    width: 90rpx;
+    height: 90rpx;
+    background: rgba(0, 0, 0,0.2);
+    color: #fff;
 
-    padding-left: 15px
+    border-radius: 50%;
+    position: fixed;
+    top: 260rpx;
+    transform: translateY(50%);
+    z-index: 10;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60rpx;
+    font-weight: bolder
+}
+.prev-icon{
+    left: 15px
+}
+.next-icon{
+    right: 15px;
 }

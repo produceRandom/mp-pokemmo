@@ -121,11 +121,14 @@ Page({
 
             
             wx.hideLoading()
-            wx.setStorageSync('pokemon_list', {
-                pokemon_list: that.data.pokemon_list,
-                pager: that.data.pager
+            if (this.data.keyword == '') {
+                wx.setStorageSync('pokemon_list', {
+                    pokemon_list: that.data.pokemon_list,
+                    pager: that.data.pager
 
-            })
+                })
+            }
+
 
         }).catch(res => {
             console.log(res)

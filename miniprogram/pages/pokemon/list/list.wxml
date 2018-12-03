@@ -57,9 +57,9 @@
     </div>
 </header>
 
-<view style='height:64px;background:rgb(248,248,248)'></view>
+<view style='height:44px;'></view>
 
-<view style='background:rgb(248,248,248)'>
+<view style=''>
     <view style='text-align:center;color:#ccc;margin-bottom:10px' wx:if="{{tip!=''}}">{{tip}}</view>
     <navigator
         wx:for="{{pokemon_list}}"
@@ -76,10 +76,10 @@
         <div>
             <div class="card-cell">
         
-                <div class="title"  style="background:#ff66cc">
+                <div class="title">
                     编号                    
                 </div>
-                <div class="desc"  style="background:#ff66cc">#{{m1.getCode(item.id)}}</div>
+                <div class="desc">#{{m1.getCode(item.id)}}</div>
             </div>
             <div class="card-cell">
         
