@@ -20,17 +20,21 @@ Page({
         if(options.id){
 
             var detail = wx.getStorageSync(`pokeDetail_${options.id}`)
-            this.setData({ poke_id: options.id },()=>{
-                wx.hideLoading()
-            })
+            this.setData({ poke_id: options.id })
 
             if(detail != ''){
                 this.setData({
                     'pokeDetail': detail,
 
+                }, () => {
+                    wx.hideLoading()
                 })
             }else{
-                this.getDetail(options.id)
+                this.getDetail(options.id).then(res=>{
+          
+                        wx.hideLoading()
+                   
+                })
 
             }
 

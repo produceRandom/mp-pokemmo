@@ -133,12 +133,12 @@
             精灵分布
         </div>
         
-        <div wx:if="{{!pokeDetail.distribution}}" style="text-align:center;color:#333;line-height:30px;height:60px;">
+        <div wx:if="{{!pokeDetail.distribution.length > 0}}" style="text-align:center;color:#333;line-height:30px;height:60px;">
             暂无分布
         </div>
         <!-- <div  wx:if="{{pokeDetail.distrbution}}" style="max-height:{{windowH*750/windowW - 1200}}rpx;overflow:scroll"> -->
         
-        <div  wx:if="{{pokeDetail.distribution}}">
+        <div  wx:if="{{pokeDetail.distribution.length > 0}}">
             <view class='flex-container' style='line-height:24px;'>
                 <text>地区</text>
                 <text>地址</text>
