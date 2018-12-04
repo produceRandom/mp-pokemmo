@@ -13,13 +13,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
-        var windowH = wx.getSystemInfoSync().screenHeight
-        var windowW = wx.getSystemInfoSync().screenWidth
-        
-        this.setData({
-            windowH:windowH,
-            windowW:windowW
+        wx.showLoading({
+            title: '获取中',
+            mask:true
         })
         if(options.id){
 
@@ -30,12 +26,18 @@ Page({
                 this.setData({
                     'pokeDetail': detail,
 
+                }, () => {
+                    wx.hideLoading()
                 })
             }else{
-                this.getDetail(options.id)
+                this.getDetail(options.id).then(res=>{
+          
+                        wx.hideLoading()
+                   
+                })
 
             }
-            this.getDistribution(options.id)
+
             
         }
     },
