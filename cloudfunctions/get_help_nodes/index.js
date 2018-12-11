@@ -27,7 +27,13 @@ exports.main = async (event, context) => {
 
 
         <h3 style="margin-top:20px">反馈</h3>
-        <p>如果有意见反馈，可以点击联系方式进行反馈</p>
+        <p>如果有意见反馈，可以点击关于页面中的联系我进行反馈</p>
+
+
+
+        <h3 style="margin-top:20px">各种联系方式</h3>
+        <p>我的pokemmo游戏名称：givemebianrou；王者荣耀：来份炒面扁肉(微信安卓)；待补充.....</p>
+
 
         <h3 style="margin-top:20px">日志</h3>
         <p>在分布的表格模式中，位置是草丛的时候并不是绿色，，今天或者明天更新版本时候修复(2018-12-3)</p>
