@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class='text-center'> 
+  <view>
+    <text>{{title}}</text>
+  </view>
+  <view>
+    <button type='primary' size='mini' style='margin-top:10px' bindtap="startDouble">开始（双人）</button>
+  </view>
+  <view>
+    <button type='primary' size='mini' style='margin-top:10px' bindtap="start">开始（vs电脑）</button>
+  </view>
+  <view class='chessBoard'  wx:if="{{!double}}">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}" wx:for-item="i" wx:key="">
+      <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16]}}" wx:for-item="j" wx:key="">
+        <view wx:if="{{chessBoard[i][j] == 0}}">
+            <view class='chess' style='left:{{i*20-30}}px;top:{{j*20-30}}px' bindtap='chessDown'></view>
+        </view>
+        <view wx:if="{{chessBoard[i][j] == 1}}">
+            <view class='chess black' style='left:{{i*20-30}}px;top:{{j*20-30}}px' bindtap='chessDown'></view>
+        </view> 
+        <view wx:if="{{chessBoard[i][j] == 2}}">
+            <view class='chess white' style='left:{{i*20-30}}px;top:{{j*20-30}}px' bindtap='chessDown'></view>
+        </view>               
+      </view>
+    </view>
+  </view>
+  <view class='chessBoard'  wx:if="{{double}}">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}" wx:for-item="i" wx:key="">
+      <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16]}}" wx:for-item="j" wx:key="">
+        <view wx:if="{{chessBoard[i][j] == 0}}">
+            <view class='chess' style='left:{{i*20-30}}px;top:{{j*20-30}}px' bindtap='chessDownDouble'></view>
+        </view>
+        <view wx:if="{{chessBoard[i][j] == 1}}">
+            <view class='chess black' style='left:{{i*20-30}}px;top:{{j*20-30}}px' bindtap='chessDownDouble'></view>
+        </view> 
+        <view wx:if="{{chessBoard[i][j] == 2}}">
+            <view class='chess white' style='left:{{i*20-30}}px;top:{{j*20-30}}px' bindtap='chessDownDouble'></view>
+        </view>               
+      </view>
+    </view>
+  </view>
+
+</view>

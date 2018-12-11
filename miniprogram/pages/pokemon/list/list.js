@@ -17,16 +17,35 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var listData = wx.getStorageSync('pokemon_list')
-        if (listData != ''){
-            this.setData({
-                pokemon_list: listData.pokemon_list,
-                pager: listData.pager
-            })
-        }else{
-            this.getList()
+        var that = this
+        wx.showLoading({
+            title: '获取中'
+        })
+        var listData = wx.getStorage({
+            key:'pokemon_list',
+            success(res){
+                wx.hideLoading()
+                
+                var listData = res.data
 
-        }
+                if (listData != '') {
+                    that.setData({
+                        pokemon_list: listData.pokemon_list,
+                        pager: listData.pager
+                    })
+                } else {
+                    wx.hideLoading()
+                    that.getList()
+
+                }
+            },
+            fail(e){
+                wx.hideLoading()
+                that.getList()
+            }
+            
+        })
+
     },
 
     /**

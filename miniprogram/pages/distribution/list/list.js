@@ -17,16 +17,34 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var listData = wx.getStorageSync('distribution_list_1')
-        if (listData != '') {
-            this.setData({
-                distribution_list: listData.distribution_list,
-                pager: listData.pager
-            })
-        } else {
-            this.getList()
+        var that = this
+        wx.showLoading({
+            title: '获取中'
+        })
+        var listData = wx.getStorage({
+            key: 'distribution_list_1',
+            success(res) {
+                wx.hideLoading()
 
-        }
+                var listData = res.data
+
+                if (listData != '') {
+                    that.setData({
+                        distribution_list: listData.distribution_list,
+                        pager: listData.pager
+                    })
+                } else {
+                    wx.hideLoading()
+                    that.getList()
+
+                }
+            },
+            fail(e) {
+                wx.hideLoading()
+                that.getList()
+            }
+        })
+
 
     },
 
@@ -128,7 +146,7 @@ Page({
         })
     },
     changeTab(e) {
-
+        var that = this
         var area_id = e.currentTarget.dataset.area_id;
         if (area_id == this.data.area_id) {
             return;
@@ -141,44 +159,56 @@ Page({
             'pager.page_current': '1',
             'distribution_list': []
         })
-        // wx.showLoading({
-        //     title: '获取中',
-        // })
+
         wx.pageScrollTo({
             scrollTop: 0,
             duration: 0,
-            success() {
-                var listData = wx.getStorageSync(`distribution_list_${area_id}`)
+            // success() {
+            //     var listData = wx.getStorageSync(`distribution_list_${area_id}`)
+            //     if (listData != '') {
+            //         this.setData({
+            //             distribution_list: listData.distribution_list,
+            //             pager: listData.pager
+            //         })
+            //         wx.hideLoading()
+            //     } else {
+            //         wx.hideLoading()
+            //         this.reloadList()
+
+
+            //     }
+            // },
+            // complete() {
+                
+            // }
+        })
+        wx.showLoading({
+            title: '获取中'
+        })
+        var listData = wx.getStorage({
+            key: `distribution_list_${area_id}`,
+            success(res) {
+                wx.hideLoading()
+
+                var listData = res.data
+
                 if (listData != '') {
-                    this.setData({
+                    that.setData({
                         distribution_list: listData.distribution_list,
                         pager: listData.pager
                     })
-                    wx.hideLoading()
                 } else {
                     wx.hideLoading()
-                    this.reloadList()
-
+                    that.reloadList()
 
                 }
             },
-            complete() {
-                
+            fail(e) {
+                wx.hideLoading()
+                that.reloadList()
             }
         })
-        var listData = wx.getStorageSync(`distribution_list_${area_id}`)
-        if (listData != '') {
-            this.setData({
-                distribution_list: listData.distribution_list,
-                pager: listData.pager
-            })
-            wx.hideLoading()
-        } else {
-            wx.hideLoading()
-            this.reloadList()
 
-
-        }
 
     },
     changeMode(e){

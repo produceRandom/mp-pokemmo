@@ -65,8 +65,15 @@
         }
         return number
     }
+    function include(str1,str2){
+        if(str1.indexOf(str2) >= 0){
+            return true
+        }
+        return false
+    }
     module.exports.getColor = getColor
     module.exports.getCode = getCode
+    module.exports.include = include
 </wxs>
 
 <div class="nav-wrap mb10">
@@ -153,6 +160,8 @@
         <text>努力值</text>
         <text>蛋组</text>
         <text>几率携带</text>
+        <text>备注</text>
+        
     </view>
 
     <navigator
@@ -174,7 +183,10 @@
         <text>{{item.chance?item.chance:''}}</text>
         <text>{{item.effort_value}}</text>
         <text>{{item.egg_group}}</text>
-        <text style='white-space:nowrap'>{{item.carry?item.carry:'无'}}</text>
+        
+        <div>{{item.carry?item.carry:'无'}}</div>
+        <div>{{m1.include(item.remark,'群聚')?item.remark:'无'}}</div>
+        
     </navigator>
 </view>
 

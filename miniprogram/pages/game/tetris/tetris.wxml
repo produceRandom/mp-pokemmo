@@ -1,0 +1,32 @@
+<!--pages/tetris/tetris.wxml-->
+<div class="body">
+		<div class="game" id="game">
+        
+            <div wx:for="{{gameData}}" wx:key="" wx:for-item='item' wx:for-index="index">
+                <div wx:for="{{item}}" wx:key="" wx:for-item='childItem' wx:for-index="childIndex"  class="{{childItem==0?'none':(childItem==1)?'done':'current'}}" style="top:{{index*20}}px;left:{{childIndex*20}}px">
+                </div>
+            </div>
+        
+        </div>
+		<div class="next" id="next">
+        
+        
+            <div wx:for="{{nextData}}" wx:key="" wx:for-item='item' wx:for-index="index">
+                <div wx:for="{{item}}" wx:key="" wx:for-item='childItem' wx:for-index="childIndex"  class="{{childItem==0?'none':(childItem==1)?'done':'current'}}" style="top:{{index*20}}px;left:{{childIndex*20}}px">
+                </div>
+            </div>
+        </div>
+		<div class="info">
+			<div>当前得分：<span id="score">{{scope}}</span>分</div>
+			<button id="start" class="btn" bindtap='start' disabled='{{isDisable}}'>开始</button>
+			<!-- <button id="stop" class="btn">暂停</button>
+			<button id="keepOn" class="btn">继续</button> -->
+
+		</div>
+        <div>
+            <div bindtap="rotate" class="opera-btn rotate">旋转</div>
+            <div bindtap="down" class="opera-btn down">加速</div>
+            <div bindtap="left" class="opera-btn left">左</div>
+            <div bindtap="right" class="opera-btn right">右</div>
+        </div>
+</div>       

@@ -1,0 +1,28 @@
+.text-center{
+  text-align: center
+}
+.chessBoard{
+  width: 300px;
+  height:300px;
+  margin: 0 auto;
+  border-right: 1px solid #000;
+  border-top:1px solid #000;
+  background-image: linear-gradient(to top,#000 1px,#000 1px,transparent 1px),linear-gradient(to right,#000 1px,#000 1px,transparent 1px);
+  background-size:20px 20px;
+  background-color:#d09425; 
+  position: relative;
+  margin-top: 20px;
+}
+.chess{
+  
+  position: absolute;
+  width:20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.black{
+  background: radial-gradient(circle,#636766,#0a0a0a)
+}
+.white{
+  background: radial-gradient(circle,#f9f9f9,#d1d1d1)
+}
