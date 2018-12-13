@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        showShan:false
     },
 
     /**
@@ -142,6 +142,12 @@ Page({
             console.log(res)
             wx.hideLoading()
 
+        })
+    },
+    changeShan(){
+        var showShan = this.data.showShan
+        this.setData({
+            showShan:!showShan
         })
     }
 })

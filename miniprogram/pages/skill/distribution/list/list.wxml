@@ -1,0 +1,62 @@
+<!--miniprogram/pages/skill/distribution/list/list.wxml-->
+
+<header>
+    <div class="mr20">
+        <picker  bindchange="bindPickerChange" value="{{groupIndex}}" range="{{groups}}" range-key='desc'>
+            <view class="picker">
+            筛选
+           
+            </view>
+        </picker>
+    </div>
+
+    <div class="header-search">
+        <i class="icon iconfont icon-search"></i>
+        <input type="text" placeholder="请输入技能名字" placeholder-style='color:#ccc' bindinput='setKeyword' value='{{keyword}}'></input>
+
+    </div>
+    <div class="search-btn" bindtap="search">
+        搜索
+    </div>
+</header>
+
+<view style='height:44px;'></view>
+<view class='main-wrapper'>
+
+    <view style='text-align:center;color:#ccc;margin-bottom:10px' wx:if="{{tip!=''}}">{{tip}}</view>
+    <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
+
+
+        <div>技能</div>
+        
+        <div class="text-center">位置</div>
+        <div class="text-right">花费</div>
+ 
+
+        
+    </view>
+
+    <div
+        wx:for="{{list}}"
+        wx:for-item="item"
+        wx:key="id"
+        class='flex-container'
+        url='/pages/pokemon/detail/detail?id={{item.pokemon_id}}'
+        
+    >
+
+        <div>{{item.skill_name}}</div>
+
+        <div class="text-center">{{item.address}}</div>
+ 
+
+        <div class="text-right">{{item.value}}</div>
+        <!-- <div>{{item.type=='1'?item.tm_no:item.remark}}</div> -->
+
+        
+    </div>
+</view>
+
+
+
+<load-more pager="{{pager}}" wx:if="{{distribution_list.length>0}}"></load-more>

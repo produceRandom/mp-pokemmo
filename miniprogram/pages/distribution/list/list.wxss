@@ -2,45 +2,50 @@
 page{
     font-size: 24rpx;
 }
-    .mb10{
-        margin-bottom: 10px;
-    }
 
-    .nav-wrap{
-        width: 100%;
-        display: flex;
-        position: fixed;
-        top: 0;
-        background: white;
-        z-index: 9;
-        
-        /*width: 100%;*/
-        /*position: fixed;*/
-        /*top: 0;*/
-        /*left: 0;*/
-    }
-    .top44{
-        width: 100%;
-        position: fixed;
-        top: 44px;
-        background: white;
-        z-index: 9
-        
-    }
-    .nav-item{
-        flex: 1;
-        text-align: center;
-        line-height: 44px;
-        background: #fff;
-        font-size: 16px;
-    }
-    .nav-item.active{
-        color: #f96a16;
-        background-image:linear-gradient(to top,#f96a16 3px,transparent);
-        background-repeat: no-repeat;
-        background-size: 80% 3px;
-        background-position: center bottom;
-    }
+.top0{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 9;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+
+.nav-wrap{
+    width: 100%;
+    display: flex;
+
+    
+    /*width: 100%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+}
+.top44{
+    width: 100%;
+    position: fixed;
+    top: 44px;
+    background: white;
+    z-index: 9
+    
+}
+.nav-item{
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    font-size: 16px;
+}
+.nav-item.active{
+    color: #f96a16;
+    background-image:linear-gradient(to top,#f96a16 3px,transparent);
+    background-repeat: no-repeat;
+    background-size: 80% 3px;
+    background-position: center bottom;
+}
 .main-wrapper{
     overflow-x: scroll;
     padding-left: 15px
@@ -123,3 +128,40 @@ page{
     padding:0 10px;
     border-radius: 5px
 }
+
+    header{
+        display: flex;
+        background: #fff;
+        padding: 0 15px;
+        height: 44px;
+        line-height: 32px;
+
+        box-sizing: border-box;
+        width: 100%;
+
+         
+    }
+    .header-search{
+        flex: auto;
+        position: relative;
+        font-size: 28rpx;
+        align-self: center;
+        white-space: nowrap        
+    }
+    .header-search i{
+        position: absolute;
+        left: 10px;
+        color:#ccc
+    }
+    .header-search span{
+        display: block;
+        background: rgb(248,248,248);
+        width: 100%;
+        height: 32px;
+        border: none;
+        box-sizing: border-box;
+        padding-left: 30px;
+        border-radius: 10px;
+        color: #ccc
+    
+    }

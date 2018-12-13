@@ -75,22 +75,36 @@
     module.exports.getCode = getCode
     module.exports.include = include
 </wxs>
+<div class="top0">
 
-<div class="nav-wrap mb10">
-    <div class="nav-item {{area_id == 1?'active':''}}" data-area_id="1" bindtap="changeTab">关都</div>
-    <div class="nav-item {{area_id == 2?'active':''}}" data-area_id="2" bindtap="changeTab">丰缘</div>
-    <div class="nav-item {{area_id == 3?'active':''}}" data-area_id="3" bindtap="changeTab">合众</div>
-</div>
-<div class="i-cell top44">
-    <div>
-        <span class="mode-item {{mode == 'card'?'active':''}}" data-mode="card" bindtap="changeMode">卡片模式</span>
-    
-        <span class="mode-item {{mode == 'simple'?'active':''}}" data-mode="simple" bindtap="changeMode">表格模式</span>
+    <header>
+        <navigator class="header-search" url="/pages/distribution/search/search" hover-class='none'>
+  
+            <i class="icon iconfont icon-search"></i>
+            <span>搜索</span>
 
+        </navigator>
+    </header>
+
+    <div class="nav-wrap mb10">
+        <div class="nav-item {{area_id == 1?'active':''}}" data-area_id="1" bindtap="changeTab">关都</div>
+        <div class="nav-item {{area_id == 2?'active':''}}" data-area_id="2" bindtap="changeTab">丰缘</div>
+        <div class="nav-item {{area_id == 3?'active':''}}" data-area_id="3" bindtap="changeTab">合众</div>
     </div>
+    <div class="i-cell">
+        <div>
+            <span class="mode-item {{mode == 'card'?'active':''}}" data-mode="card" bindtap="changeMode">卡片模式</span>
+        
+            <span class="mode-item {{mode == 'simple'?'active':''}}" data-mode="simple" bindtap="changeMode">表格模式</span>
+
+        </div>
+    </div>
+
 </div>
 
-<view style='height:104px'></view>
+
+
+<view style='height:148px'></view>
 
 <view wx:if="{{mode == 'card'}}" style='background:rgb(248,248,248)'>
 

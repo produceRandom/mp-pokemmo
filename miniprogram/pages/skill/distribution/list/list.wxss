@@ -1,0 +1,77 @@
+/* miniprogram/pages/skill/distribution/list/list.wxss */
+
+
+page{
+    font-size: 24rpx;
+}
+.main-wrapper{
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+.flex-container{
+    display: flex;
+}
+.flex-container text,.flex-container > div{
+
+
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc
+    
+}
+.flex-container > div{
+    flex: 1;
+
+}
+.text-right{
+    justify-content: flex-end;
+    
+}
+.text-center{
+    justify-content: center;
+    min-width: 240rpx;
+}
+
+    header{
+        display: flex;
+        background: #fff;
+        padding: 0 15px;
+        height: 44px;
+        line-height: 32px;
+        position: fixed;
+        top: 0;
+        box-sizing: border-box;
+        width: 100%;
+        z-index: 5
+         
+    }
+    
+    header >div{
+        align-self: center;
+        white-space: nowrap
+    }
+    .header-search{
+        flex: auto;
+        position: relative;
+        font-size: 28rpx;
+    }
+    .header-search i{
+        position: absolute;
+        left: 10px;
+        color:#ccc
+    }
+    .header-search input{
+        background: rgb(248,248,248);
+        width: 100%;
+        height: 32px;
+        border: none;
+        box-sizing: border-box;
+        padding-left: 30px;
+        border-radius: 10px;
+    
+    }
+    .search-btn{
+        margin-left: 20px;
+        font-size: 28rpx;
+    }

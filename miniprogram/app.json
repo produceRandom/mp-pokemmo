@@ -17,7 +17,8 @@
         "pages/help/help",
         "pages/menu/egg/egg",
         "pages/game/tetris/tetris",
-        "pages/game/chess/chess"
+        "pages/game/chess/chess",
+        "pages/skill/distribution/list/list"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -45,10 +46,10 @@
                 "selectedIconPath": "images/icon/sort_a.png"
             },
             {
-                "pagePath": "pages/distribution/search/search",
-                "text": "搜索分布",
-                "iconPath": "images/icon/search.png",
-                "selectedIconPath": "images/icon/search_a.png"
+                "pagePath": "pages/skill/distribution/list/list",
+                "text": "技能",
+                "iconPath": "images/icon/skill.png",
+                "selectedIconPath": "images/icon/skill_a.png"
             },
             {
                 "pagePath": "pages/about/about",

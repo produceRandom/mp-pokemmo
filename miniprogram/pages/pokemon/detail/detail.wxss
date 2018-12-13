@@ -28,7 +28,7 @@ page{
 }
 .img-wrapper image{
     width: 200rpx;
-    height: 200rpx;
+
 }
 .card-container{
     width: 100%;

@@ -1,6 +1,7 @@
 /* miniprogram/pages/about/about.wxss */
 page{
-    background: rgb(248,248 ,248)
+    background: rgb(248,248 ,248);
+    font-size: 24rpx;
 }
 .btn-clear{
     text-align: left;
@@ -10,4 +11,14 @@ page{
 }
 button::after{
     border: 0
+}
+.close-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28rpx;
+    line-height: 30px;
+    padding: 0 10px;
+    background: #aaa;
+    color: #fff
 }

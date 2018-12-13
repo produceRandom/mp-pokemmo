@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        showAd:true
     },
 
     /**
@@ -75,5 +75,10 @@ Page({
     //         content: '如需反馈bug，更改意见等，可添加微信：z1010446826',
     //     })
     // },
+    closeAd(){
+        this.setData({
+            showAd:false
+        })
+    }
 
 })
