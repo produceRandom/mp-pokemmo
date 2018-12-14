@@ -108,7 +108,7 @@ Page({
                     //如果黑棋的第k种赢法记录数为5.则获胜
                     if (blackWin[k] == 5) {
                         wx.showModal({
-                            title: '黑胜',
+                            title: '你赢了',
                             content: '',
                             confirmText: "重新开始",
                             success: function (res) {
@@ -142,7 +142,7 @@ Page({
                     //如果白棋的第k种赢法记录数为5.则获胜
                     if (whiteWin[k] == 5) {
                         wx.showModal({
-                            title: '白胜',
+                            title: '电脑赢了',
                             content: '',
                             confirmText:"重新开始",
                             success: function (res) {

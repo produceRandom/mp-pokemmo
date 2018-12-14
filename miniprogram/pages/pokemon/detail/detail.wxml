@@ -189,3 +189,13 @@
 
 
 </navigator>
+
+
+
+
+
+<div class="i-cells" wx:if="{{showAd}}">
+    <!-- <div style='height:30px;'></div> -->
+    <ad unit-id="adunit-c9d6996ba4a04e3c"></ad>
+    <div class="close-icon" bindtap='closeAd'>关闭广告</div>
+</div>

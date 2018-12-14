@@ -38,13 +38,20 @@
 
 
 <div class="i-cells">
-    <button class="i-cell i-cell-access btn-clear" hover-class='none'  bindtap="showContact" open-type='contact' >
+    <button class="i-cell i-cell-access btn-clear" hover-class='none' open-type='contact' >
 
         <div class="i-cell-col-title">
             <i class="sprite-icon sprite-icon-282"></i><p>联系我</p>
         </div>
         <div class="i-cell-col-remarks"></div>
     </button>
+    <button class="i-cell i-cell-access btn-clear" hover-class='none'   open-type='feedback' >
+
+        <div class="i-cell-col-title">
+            <i class="sprite-icon sprite-icon-385"></i><p>点此反馈</p>
+        </div>
+        <div class="i-cell-col-remarks"></div>
+    </button>    
     <navigator class="i-cell i-cell-access btn-clear" hover-class='none' url='/pages/help/help'>
 
         <div class="i-cell-col-title">
@@ -74,7 +81,7 @@
 </div>
 
 <div class="i-cells" wx:if="{{showAd}}">
-    <div style='height:30px;'></div>
+    <div style='height:20px;'></div>
     <ad unit-id="adunit-c9d6996ba4a04e3c"></ad>
     <div class="close-icon" bindtap='closeAd'>关闭广告</div>
 </div>

@@ -6,7 +6,16 @@ page{
     padding: 30rpx;
 
 }
-
+.close-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24rpx;
+    line-height: 20px;
+    padding: 0 10px;
+    background: #aaa;
+    color: #fff
+}
 .poke_card{
     background: #bad5ff;
     color: #fff;

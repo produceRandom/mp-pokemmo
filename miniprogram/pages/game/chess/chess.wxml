@@ -2,10 +2,11 @@
 <view class='text-center'> 
   <view>
     <text>{{title}}</text>
+    <text>点击开始后，先手下棋</text>
   </view>
-  <view>
+  <!-- <view>
     <button type='primary' size='mini' style='margin-top:10px' bindtap="startDouble">开始（双人）</button>
-  </view>
+  </view> -->
   <view>
     <button type='primary' size='mini' style='margin-top:10px' bindtap="start">开始（vs电脑）</button>
   </view>

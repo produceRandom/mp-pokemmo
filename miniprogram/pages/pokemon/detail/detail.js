@@ -1,18 +1,35 @@
 // miniprogram/pages/distribution/pokeDetail/pokeDetail.js
 
+
+const App = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        showShan:false
+        showShan:false,
+        showAd:false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+
+
+
+        var date = new Date()
+
+        if (App.globalData.closeAdTime && date - App.globalData.closeAdTime < 300000){
+            this.setData({
+                showAd:false
+            })
+        }else{
+            this.setData({
+                showAd: true
+            })
+        }
         wx.showLoading({
             title: '获取中',
             mask:true
@@ -149,5 +166,11 @@ Page({
         this.setData({
             showShan:!showShan
         })
+    },
+    closeAd() {
+        this.setData({
+            showAd: false
+        })
+        App.globalData.closeAdTime= new Date()
     }
 })
