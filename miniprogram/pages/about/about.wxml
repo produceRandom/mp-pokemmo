@@ -45,13 +45,16 @@
         </div>
         <div class="i-cell-col-remarks"></div>
     </button>
-    <button class="i-cell i-cell-access btn-clear" hover-class='none'   open-type='feedback' >
+    <div class="i-cell i-cell-access">
+        <button class="i-cell i-cell-access btn-clear" hover-class='none'   open-type='feedback' style='padding:0;width:100%'>
 
-        <div class="i-cell-col-title">
-            <i class="sprite-icon sprite-icon-385"></i><p>点此反馈</p>
-        </div>
-        <div class="i-cell-col-remarks"></div>
-    </button>    
+            <div class="i-cell-col-title">
+                <i class="sprite-icon sprite-icon-385"></i><p>点此反馈</p>
+            </div>
+            <div class="i-cell-col-remarks"></div>
+        </button>   
+    </div>
+ 
     <navigator class="i-cell i-cell-access btn-clear" hover-class='none' url='/pages/help/help'>
 
         <div class="i-cell-col-title">
@@ -80,8 +83,9 @@
     </navigator>    
 </div>
 
-<div class="i-cells" wx:if="{{showAd}}">
+<!-- <div class="i-cells" wx:if="{{showAd}}">
     <div style='height:20px;'></div>
     <ad unit-id="adunit-c9d6996ba4a04e3c"></ad>
     <div class="close-icon" bindtap='closeAd'>关闭广告</div>
-</div>
+</div> -->
+<ad unit-id="adunit-c9d6996ba4a04e3c"></ad>

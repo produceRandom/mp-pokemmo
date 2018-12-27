@@ -25,11 +25,12 @@
 
         <div class="img-wrapper">
             <image
-                src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(poke_id)}}.png' 
+                src='{{poke_id?"https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/"+m1.getCode(poke_id)+".png":""}}' 
                 mode='widthFix'
                 style='height: 200rpx;'
                 wx:if='{{!showShan}}'
-                bindtap='changeShan'    
+                bindtap='changeShan'
+                binderror='imgErr'    
             ></image>
             <image
                 src='http://s.pokeuniv.com/pokemon/sprite/front-shiny/{{poke_id}}.gif' 
@@ -67,14 +68,22 @@
 
 
     <div class="card-container">
-        <div class="card-title">
-        
-            <div class="mb10">种</div>
-            <div class="mb10">族</div>
-            <div>值</div>
+        <div class="card-title-list">
+            <div class="card-title {{tabIndex=='1'?'active':''}}" bindtap="changeTab" data-tab_index='1'>
+                <div class="mb10">种</div>
+                <div class="mb10">族</div>
+                <div>值</div>
+            
+            </div>
+           <div class="card-title {{tabIndex=='2'?'active':''}}" bindtap="changeTab" data-tab_index='2'>
+                <div class="mb10">进</div>
+                <div class="mb10">化</div>
+                <div>树</div>
+            
+            </div>
             
         </div>
-        <div style='flex:1;box-sizing:border-box;padding:20rpx'>
+        <div class='card-content' wx:if="{{tabIndex=='1'}}">
             <div class="card-cell">
         
                 <div class="title">
@@ -129,7 +138,10 @@
                 </div>
             </div>
         </div>
+        <div class='card-content' wx:if="{{tabIndex=='2'}}">
 
+            <div></div>
+        </div>   
 
     </div>
 
@@ -194,8 +206,8 @@
 
 
 
-<div class="i-cells" wx:if="{{showAd}}">
-    <!-- <div style='height:30px;'></div> -->
+<!-- <div class="i-cells" wx:if="{{showAd}}">
+
     <ad unit-id="adunit-c9d6996ba4a04e3c"></ad>
     <div class="close-icon" bindtap='closeAd'>关闭广告</div>
-</div>
+</div> -->

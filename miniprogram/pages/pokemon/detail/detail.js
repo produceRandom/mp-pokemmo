@@ -9,7 +9,9 @@ Page({
      */
     data: {
         showShan:false,
-        showAd:false
+        showAd:false,
+        tabIndex:1,
+        evolutionAr:[]
     },
 
     /**
@@ -172,5 +174,16 @@ Page({
             showAd: false
         })
         App.globalData.closeAdTime= new Date()
+    },
+    imgErr(e){
+        console.log('img load error')
+        console.log(e)
+    },
+    changeTab(e){
+  
+        var tabIndex = e.currentTarget.dataset.tab_index
+        this.setData({
+            tabIndex:tabIndex
+        })
     }
 })
