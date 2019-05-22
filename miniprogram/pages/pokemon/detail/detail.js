@@ -116,7 +116,7 @@ Page({
 
       var that = this
       return wx.cloud.callFunction({
-        name: 'get_pokemon_evolution',
+        name: 'get_pokemon_detail',
         data: {
           id: id
         }
