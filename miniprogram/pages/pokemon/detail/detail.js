@@ -32,12 +32,14 @@ Page({
                 showAd: true
             })
         }
+
+        
         wx.showLoading({
             title: '获取中',
             mask:true
         })
         if(options.id){
-
+            this.getEvolution(options.id)
             var detail = wx.getStorageSync(`pokeDetail_${options.id}`)
             this.setData({ poke_id: options.id })
 
@@ -51,7 +53,7 @@ Page({
             }else{
                 this.getDetail(options.id).then(res=>{
           
-                        wx.hideLoading()
+                    wx.hideLoading()
                    
                 })
 
@@ -109,29 +111,53 @@ Page({
     onShareAppMessage: function () {
 
     },
-    getDetail(id){
 
-        var that = this
-        return wx.cloud.callFunction({
-            name: 'get_pokemon_detail',
-            data: {
-                id: id
-            }
-        }).then(res => {
-            console.log(res)
-            that.setData({
-                'pokeDetail': res.result.data,
+    getDetail(id) {
 
-            })
-
-            wx.setStorageSync(`pokeDetail_${id}`, res.result.data)
-        }).catch(res => {
-            console.log(res)
-
+      var that = this
+      return wx.cloud.callFunction({
+        name: 'get_pokemon_evolution',
+        data: {
+          id: id
+        }
+      }).then(res => {
+        console.log(res)
+        that.setData({
+          'pokeDetail': res.result.data,
 
         })
 
+        wx.setStorageSync(`pokeDetail_${id}`, res.result.data)
+      }).catch(res => {
+        console.log(res)
+
+
+      })
+
     },
+    getEvolution(id) {
+
+      var that = this
+      return wx.cloud.callFunction({
+        name: 'get_pokemon_evolution',
+        data: {
+          id: id
+        }
+      }).then(res => {
+        console.log(res)
+        that.setData({
+          'evolutionAr': res.result.data,
+
+        })
+
+        // wx.setStorageSync(`pokeDetail_${id}`, res.result.data)
+      }).catch(res => {
+        console.log(res)
+
+
+      })
+
+    },    
     getDistribution(id){
  
         var that = this

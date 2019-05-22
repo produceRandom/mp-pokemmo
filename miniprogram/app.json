@@ -1,62 +1,63 @@
 {
-    "cloud": true,
-    "pages": [
-        "pages/pokemon/list/list",
-        "pages/distribution/list/list",
-        "pages/distribution/search/search",
-        "pages/index/index",
-        "pages/userConsole/userConsole",
-        "pages/storageConsole/storageConsole",
-        "pages/databaseGuide/databaseGuide",
-        "pages/addFunction/addFunction",
-        "pages/deployFunctions/deployFunctions",
-        "pages/chooseLib/chooseLib",
-        "pages/about/about",
-        "pages/distribution/pokeDetail/pokeDetail",
-        "pages/pokemon/detail/detail",
-        "pages/help/help",
-        "pages/menu/egg/egg",
-        "pages/game/tetris/tetris",
-        "pages/game/chess/chess",
-        "pages/skill/distribution/list/list"
-    ],
-    "window": {
-        "backgroundColor": "#F6F6F6",
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
-        "navigationBarTitleText": "pokemmo精灵图鉴",
-        "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "color": "#000000",
-        "backgroundColor": "#ffffff",
-        "selectedColor": "#c9ab79",
-        "borderStyle": "black",
-        "list": [
-            {
-                "pagePath": "pages/pokemon/list/list",
-                "text": "全国图鉴",
-                "iconPath": "images/icon/home.png",
-                "selectedIconPath": "images/icon/home_a.png"
-            },
-            {
-                "pagePath": "pages/distribution/list/list",
-                "text": "分布",
-                "iconPath": "images/icon/sort.png",
-                "selectedIconPath": "images/icon/sort_a.png"
-            },
-            {
-                "pagePath": "pages/skill/distribution/list/list",
-                "text": "技能",
-                "iconPath": "images/icon/skill.png",
-                "selectedIconPath": "images/icon/skill_a.png"
-            },
-            {
-                "pagePath": "pages/about/about",
-                "text": "菜单",
-                "iconPath": "images/icon/about.png",
-                "selectedIconPath": "images/icon/about_a.png"
-            }
-        ]
-    }
+  "cloud": true,
+  "pages": [
+    "pages/pokemon/list/list",
+    "pages/distribution/list/list",
+    "pages/distribution/search/search",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/about/about",
+    "pages/distribution/pokeDetail/pokeDetail",
+    "pages/pokemon/detail/detail",
+    "pages/help/help",
+    "pages/menu/egg/egg",
+    "pages/game/tetris/tetris",
+    "pages/game/chess/chess",
+    "pages/skill/distribution/list/list"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "pokemmo精灵图鉴",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#c9ab79",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/pokemon/list/list",
+        "text": "全国图鉴",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home_a.png"
+      },
+      {
+        "pagePath": "pages/distribution/list/list",
+        "text": "分布",
+        "iconPath": "images/icon/sort.png",
+        "selectedIconPath": "images/icon/sort_a.png"
+      },
+      {
+        "pagePath": "pages/skill/distribution/list/list",
+        "text": "技能",
+        "iconPath": "images/icon/skill.png",
+        "selectedIconPath": "images/icon/skill_a.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "菜单",
+        "iconPath": "images/icon/about.png",
+        "selectedIconPath": "images/icon/about_a.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

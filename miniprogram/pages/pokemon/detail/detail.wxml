@@ -140,7 +140,13 @@
         </div>
         <div class='card-content' wx:if="{{tabIndex=='2'}}">
 
-            <div></div>
+            <div 
+              wx:for='{{evolutionAr}}'
+              wx:for-item='item'
+              wx:key='id'
+            >
+            {{item.f_name}}----------{{item.need}}-------{{item.to_name}}
+            </div>
         </div>   
 
     </div>

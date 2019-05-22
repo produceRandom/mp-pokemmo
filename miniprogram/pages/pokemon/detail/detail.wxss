@@ -234,3 +234,6 @@ page{
 .next-icon{
     right: 15px;
 }
+.card-content{
+  color:#333
+}

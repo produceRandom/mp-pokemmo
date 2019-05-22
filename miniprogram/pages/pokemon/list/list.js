@@ -108,19 +108,9 @@ Page({
     getList() {
 
         var that = this
-
-        // 查询当前用户所有的 counters
-        // db.collection('distribution').get().then(res => {
-        //     // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
-        //     console.log(res.data)
-        //     that.setData({
-        //         distribution_list:res.data
-        //     })
-        // })
         wx.showLoading({
             title: '获取中',
         })
-
         var data = {
             page_current: this.data.pager.page_current ? this.data.pager.page_current : '1'
         }
@@ -136,9 +126,6 @@ Page({
                 pokemon_list: [...that.data.pokemon_list, ...res.result.data.items],
                 pager: res.result.data.pager
             })
-
-
-            
             wx.hideLoading()
             if (this.data.keyword == '') {
                 wx.setStorageSync('pokemon_list', {
