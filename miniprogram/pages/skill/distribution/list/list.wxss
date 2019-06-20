@@ -10,27 +10,19 @@ page{
 }
 .flex-container{
     display: flex;
-}
-.flex-container text,.flex-container > div{
-
-
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ccc
-    
+    border-bottom: 1px solid #ccc;
+    line-height: 2em;
+    font-size: 24rpx;
+    align-items: flex-end
 }
 .flex-container > div{
-    flex: 1;
+    padding: 10px 0;
+    flex: 1
+}
 
-}
-.text-right{
-    justify-content: flex-end;
-    
-}
-.text-center{
-    justify-content: center;
-    min-width: 240rpx;
+
+.flex-container > div.flex2{
+    flex: 2
 }
 
     header{

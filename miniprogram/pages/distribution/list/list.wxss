@@ -48,7 +48,7 @@ page{
 }
 .main-wrapper{
     overflow-x: scroll;
-    padding-left: 15px
+
 }
 .flex-container{
     display: flex;
@@ -59,7 +59,7 @@ page{
     min-height: 30px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc
+    /* border-bottom: 1px solid #ccc */
     
 }
 .mode-item{
@@ -164,4 +164,18 @@ page{
         border-radius: 10px;
         color: #ccc
     
+    }
+    .title,.body{
+        padding-left: 30rpx;
+        width: 1320rpx;
+        box-sizing: border-box
+    }
+    .title {
+        white-space: nowrap;
+
+    }
+    .title >text,.title > div{
+        min-width: 150rpx;
+        display: inline-block;
+
     }

@@ -40,6 +40,9 @@ div{
 .huge-fz{
     font-size: 36rpx;
 }
+.blod{
+    font-weight: bolder
+}
 .gray{
     color: #ccc
 }

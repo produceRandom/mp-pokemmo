@@ -78,7 +78,7 @@
            <div class="card-title {{tabIndex=='2'?'active':''}}" bindtap="changeTab" data-tab_index='2'>
                 <div class="mb10">进</div>
                 <div class="mb10">化</div>
-                <div>树</div>
+                <div>线</div>
             
             </div>
             
@@ -145,7 +145,24 @@
               wx:for-item='item'
               wx:key='id'
             >
-            {{item.f_name}}----------{{item.need}}-------{{item.to_name}}
+                <div class='evo-item flex-container'>
+                
+                    <navigator class='icon-box' open-type='redirectTo' url="/pages/pokemon/detail/detail?id={{item.f_id}}">
+                        <i class="sprite-icon sprite-icon-{{m1.getCode(item.f_id)}}"></i>
+                    </navigator>
+
+                    <view class='evo-line'>
+                    
+                        <view class='evo-desc'>
+                            {{item.type=='1'?"lv."+item.need:item.need}}
+                        </view>
+                    </view>
+
+                    <navigator class='icon-box' open-type='redirectTo' url="/pages/pokemon/detail/detail?id={{item.t_id}}">
+                        <i class="sprite-icon sprite-icon-{{m1.getCode(item.t_id)}}"></i>
+                    </navigator>
+                </div>
+     
             </div>
         </div>   
 

@@ -1,5 +1,18 @@
 <!--miniprogram/pages/skill/distribution/list/list.wxml-->
+<wxs module="m1">
 
+    function getType(type,types){
+        for(var i = 0;i<types.length;i++){
+            if(types[i].id == type){
+                return types[i].name
+            }
+
+        }
+    
+    }
+
+    module.exports.getType = getType
+</wxs>
 <header>
     <div class="mr20">
         <picker  bindchange="bindPickerChange" value="{{groupIndex}}" range="{{groups}}" range-key='desc'>
@@ -24,7 +37,7 @@
 <view class='main-wrapper'>
 
     <view style='text-align:center;color:#ccc;margin-bottom:10px' wx:if="{{tip!=''}}">{{tip}}</view>
-    <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
+    <!-- <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
 
 
         <div>技能</div>
@@ -34,7 +47,7 @@
  
 
         
-    </view>
+    </view> -->
 
     <div
         wx:for="{{list}}"
@@ -45,12 +58,27 @@
         
     >
 
-        <div>{{item.skill_name}}</div>
-
-        <div class="text-center">{{item.address}}</div>
- 
-
-        <div class="text-right">{{item.value}}</div>
+        <div>
+            <view class='mid-fz blod'>#{{item.skill_id}}</view>
+            <view>威力:{{item.power>0?item.power:"---"}}</view>
+            <view>{{m1.getType(item.type,types)}}</view>
+        </div>
+        <div>
+            <view class='mid-fz blod'>{{item.skill_name}}</view>
+            <view>命中:{{item.accuracy>0?item.accuracy:"---"}}</view>
+            <view>{{item.category}}</view>
+        </div>
+        <div class='flex2'>
+   
+            <view>pp:{{item.pp}}</view>
+            <view>{{item.address}}</view>
+        
+        </div>
+         <div style='flex:.5;color:#b72e0e;'>
+       
+            <view>{{item.value}}</view>
+        
+        </div>
         <!-- <div>{{item.type=='1'?item.tm_no:item.remark}}</div> -->
 
         

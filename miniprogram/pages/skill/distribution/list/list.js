@@ -11,7 +11,8 @@ Page({
         list: [],
         pager: {},
         keyword: '',
-        tip: ""
+        tip: "",
+        types:[]
     },
 
     /**
@@ -22,30 +23,32 @@ Page({
         wx.showLoading({
             title: '获取中'
         })
-        var listData = wx.getStorage({
-            key: 'skill_distribution_list',
-            success(res) {
-                wx.hideLoading()
+        this.getTypes()
+        this.getList()
+        // var listData = wx.getStorage({
+        //     key: 'skill_distribution_list',
+        //     success(res) {
+        //         wx.hideLoading()
 
-                var listData = res.data
+        //         var listData = res.data
 
-                if (listData != '') {
-                    that.setData({
-                        list: listData.list,
-                        pager: listData.pager
-                    })
-                } else {
-                    wx.hideLoading()
-                    that.getList()
+        //         if (listData != '') {
+        //             that.setData({
+        //                 list: listData.list,
+        //                 pager: listData.pager
+        //             })
+        //         } else {
+        //             wx.hideLoading()
+        //             that.getList()
 
-                }
-            },
-            fail(e) {
-                wx.hideLoading()
-                that.getList()
-            }
+        //         }
+        //     },
+        //     fail(e) {
+        //         wx.hideLoading()
+        //         that.getList()
+        //     }
 
-        })
+        // })
 
     },
 
@@ -142,13 +145,13 @@ Page({
 
 
             wx.hideLoading()
-            if (this.data.keyword == '') {
-                wx.setStorageSync('skill_distribution_list', {
-                    list: that.data.list,
-                    pager: that.data.pager
+            // if (this.data.keyword == '') {
+            //     wx.setStorageSync('skill_distribution_list', {
+            //         list: that.data.list,
+            //         pager: that.data.pager
 
-                })
-            }
+            //     })
+            // }
 
 
         }).catch(res => {
@@ -189,6 +192,19 @@ Page({
         return this.getList().then(res => {
             that.setData({
                 tip: "下拉可刷新页面"
+            })
+        })
+    },
+    getTypes(){
+        return wx.cloud.callFunction({
+            name: 'type',
+            data: {
+                url: 'get_types',
+            }
+        }).then(res => {
+            console.log(res)
+            this.setData({
+                types: res.result.data.types 
             })
         })
     }

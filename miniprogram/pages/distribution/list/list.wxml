@@ -162,7 +162,8 @@
 
 
 <view class='main-wrapper' wx:if="{{mode=='simple'}}">
-    <view class='flex-container' style='line-height:24px;border-bottom:1px solid #ccc'>
+    <view class='title' style='line-height:24px;border-bottom:1px solid #ccc;background:#bad5ff;color:#fff'>
+
         <text>地址</text>
         <div style="min-width:90rpx;">
             <div style="width:40px;text-align:center">图像</div>
@@ -182,7 +183,7 @@
         wx:for="{{distribution_list}}"
         wx:for-item="item"
         wx:key="id"
-        class='flex-container'
+        class='flex-container body'
         url='/pages/pokemon/detail/detail?id={{item.pokemon_id}}'
         
     >
@@ -192,7 +193,7 @@
         <div style="min-width:90rpx;"><i class="sprite-icon sprite-icon-{{m1.getCode(item.pokemon_id)}}"></i></div>
         <div>{{item.pokemon_name}}</div>
         <text 
-            style='background:{{m1.getColor(item.position)}};color:#fff'
+            style='color:{{m1.getColor(item.position)}}'
         >{{item.position}}</text>
         <text>{{item.chance?item.chance:''}}</text>
         <text>{{item.effort_value}}</text>

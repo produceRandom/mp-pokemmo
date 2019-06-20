@@ -237,3 +237,52 @@ page{
 .card-content{
   color:#333
 }
+
+.icon-box{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 5px;
+    background: #fff;
+    border: 1rpx solid #efefef;
+    
+}
+.evo-item{
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    margin-bottom: 10px
+}
+.evo-line{
+    position: relative;
+    flex: 1;
+}
+.evo-line::before{
+    content: '';
+    width: 90%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    border-bottom: 1px dashed #ccc;
+}
+.evo-line::after{
+    content: '';
+    position: absolute;
+    border-top: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    width: 15rpx;
+    height: 15rpx;
+    transform: rotateZ(45deg);
+    right: 5%;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.evo-desc{
+    text-align: center;
+    position: relative;
+    transform: translateY(-50%)
+}
