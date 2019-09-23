@@ -24,14 +24,23 @@
     <div class="flex-start">
 
         <div class="img-wrapper">
-            <image
+            <!-- <image
                 src='{{poke_id?"https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/"+m1.getCode(poke_id)+".png":""}}' 
                 mode='widthFix'
                 style='height: 200rpx;'
                 wx:if='{{!showShan}}'
                 bindtap='changeShan'
                 binderror='imgErr'    
-            ></image>
+            ></image> -->
+           <image
+                src='{{poke_id?"http://res.pokemon.name/common/pokemon/pgl/"+m1.getCode(poke_id)+".00.png":""}}' 
+                mode='widthFix'
+                style='height: 200rpx;'
+                wx:if='{{!showShan}}'
+                bindtap='changeShan'
+                binderror='imgErr'    
+            ></image>            
+
             <image
                 src='http://s.pokeuniv.com/pokemon/sprite/front-shiny/{{poke_id}}.gif' 
                 style='width:150rpx;height:0'

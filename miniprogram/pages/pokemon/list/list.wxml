@@ -71,7 +71,10 @@
     >
         <div class="card-img-wrapper">
             <!-- <image src='http://s.pokeuniv.com/pokemon/sprite/front-shiny/{{item.id}}.gif'></image> -->
-            <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(item.id)}}.png'></image>
+            <!-- <image src='https://7a63-zc-1c3ec4-1257735116.tcb.qcloud.la/poke_pic/{{m1.getCode(item.id)}}.png'></image> -->
+            <image src='http://res.pokemon.name/common/pokemon/pgl/{{m1.getCode(item.id)}}.00.png'></image>
+
+            
         </div>
         <div>
             <div class="card-cell">
