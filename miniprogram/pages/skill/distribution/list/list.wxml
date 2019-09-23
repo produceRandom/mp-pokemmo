@@ -15,12 +15,12 @@
 </wxs>
 <header>
     <div class="mr20">
-        <picker  bindchange="bindPickerChange" value="{{groupIndex}}" range="{{groups}}" range-key='desc'>
+        <!-- <picker  bindchange="bindPickerChange" value="{{groupIndex}}" range="{{groups}}" range-key='desc'> -->
             <view class="picker">
             筛选
            
             </view>
-        </picker>
+        <!-- </picker> -->
     </div>
 
     <div class="header-search">
